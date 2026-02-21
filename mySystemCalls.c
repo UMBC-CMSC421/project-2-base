@@ -40,14 +40,15 @@ SYSCALL_DEFINE1(application_destroy_mailbox, int, bid) {
  * Syscall to add a message to a given mailbox. 
  * Parameters:
  * - bid:     the Box ID to add the given message to.
- * - message: the message, as a void pointer, from the user-space caller; to be added.
+ * - message: the ENTIRE message structure, as a void pointer, from the user-space caller; to be added.
  *
  * Return Values:
  *
  * - ENOENT:  the supplied Box ID is less than zero OR there is no mailbox with the given Box ID.
- * - EPERM:   assuming a mailbox was found, the mailbox still has messages within it.
  * - EACCES:  the kernel is unable to access the user-space memory.
- * - EIO:     the kernel is unable to allocate memory for the new message.
+ * - ENOMEM:  the kernel is unable to allocate space to copy the message into.
+ * - EPERM:   assuming a mailbox was found, the mailbox already has a message with the messages' ID (mid) 
+ * - EIO:     the message has no data associated with it.
  * - 0:       the new message was successfully added to the desired mailbox.
  */
 SYSCALL_DEFINE1(application_add_message, int, bid, void* __user, message) {
