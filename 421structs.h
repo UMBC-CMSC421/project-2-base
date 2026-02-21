@@ -27,9 +27,9 @@ typedef struct mailbox_421 {
  * The Mail Application Context structure for the project.
  * mailboxes - a linked-list of mailboxes in the application.
  */
-typedef struct mail_app_context {
+typedef struct mail_app_context_421 {
   mailbox_421_t* mailboxes;
-};
+} mail_app_context_421_t;
 
 /**
  * Mailbox-Related Functions
