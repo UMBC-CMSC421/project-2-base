@@ -1,5 +1,5 @@
-#ifndef 421_MSGQ_UMBC_H
-#define 421_MSGQ_UMBC_H
+#ifndef MSGQ_UMBC_H
+#define MSGQ_UMBC_H
 
 /**
  * The Message structure for the project.
