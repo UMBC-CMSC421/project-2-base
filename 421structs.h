@@ -21,6 +21,7 @@ typedef struct message_421 {
 typedef struct mailbox_421 {
   int bid;
   message_421_t* head;
+  struct mailbox_421* next;
 } mailbox_421_t;
 
 /**
