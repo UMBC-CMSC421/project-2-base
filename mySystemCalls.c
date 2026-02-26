@@ -51,7 +51,7 @@ SYSCALL_DEFINE1(application_destroy_mailbox, int, bid) {
  * - EIO:     the message has no data associated with it.
  * - 0:       the new message was successfully added to the desired mailbox.
  */
-SYSCALL_DEFINE1(application_add_message, int, bid, void* __user, message) {
+SYSCALL_DEFINE2(application_add_message, int, bid, void* __user, message) {
   return EPERM;
 }
 
